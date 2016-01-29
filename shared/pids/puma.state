@@ -1,5 +1,5 @@
 ---
-pid: 12880
+pid: 14314
 config: !ruby/object:Puma::Configuration
   cli_options: 
   conf: 
@@ -24,7 +24,7 @@ config: !ruby/object:Puma::Configuration
     :redirect_append: true
     :pidfile: "/home/ubuntu/myapp/shared/pids/puma.pid"
     :state: "/home/ubuntu/myapp/shared/pids/puma.state"
-    :control_url: unix:///tmp/puma-status-1454068265529-12880
-    :control_url_temp: "/tmp/puma-status-1454068265529-12880"
-    :control_auth_token: 366072bc4ae01b81c247c9a18e3e195a
+    :control_url: unix:///tmp/puma-status-1454069298616-14314
+    :control_url_temp: "/tmp/puma-status-1454069298616-14314"
+    :control_auth_token: 55ea2a1c1b41f45d4e8c346aac58877
     :tag: myapp
