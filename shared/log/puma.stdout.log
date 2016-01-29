@@ -1,0 +1,9 @@
+=== puma startup: 2016-01-29 11:50:52 +0000 ===
+[12809] * Starting control server on unix:///tmp/puma-status-1454068252685-12809
+[12809] - Worker 0 (pid: 12858) booted, phase: 0
+[12809] - Gracefully shutting down workers...
+[12809] === puma shutdown: 2016-01-29 11:51:05 +0000 ===
+[12809] - Goodbye!
+=== puma startup: 2016-01-29 11:51:05 +0000 ===
+[12880] * Starting control server on unix:///tmp/puma-status-1454068265529-12880
+[12880] - Worker 0 (pid: 12929) booted, phase: 0
