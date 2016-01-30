@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :chef_att_sources
+  resources :chef_att_debs
+  resources :chef_att_repositories
   resources :room_categories
   resources :hotels
   # The priority is based upon order of creation: first created -> highest priority.

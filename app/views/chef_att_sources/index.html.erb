@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Chef Att Sources</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Room category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chef_att_sources.each do |chef_att_source| %>
+      <tr>
+        <td><%= chef_att_source.room_category %></td>
+        <td><%= link_to 'Show', chef_att_source %></td>
+        <td><%= link_to 'Edit', edit_chef_att_source_path(chef_att_source) %></td>
+        <td><%= link_to 'Destroy', chef_att_source, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Chef att source', new_chef_att_source_path %>

@@ -1,0 +1,2 @@
+module ChefAttDebsHelper
+end

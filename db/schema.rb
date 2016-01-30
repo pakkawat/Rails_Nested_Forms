@@ -11,10 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129115404) do
+ActiveRecord::Schema.define(version: 20160130104945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chef_att_debs", force: :cascade do |t|
+    t.integer  "room_category_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "chef_att_debs", ["room_category_id"], name: "index_chef_att_debs_on_room_category_id", using: :btree
+
+  create_table "chef_att_repositories", force: :cascade do |t|
+    t.integer  "room_category_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "chef_att_repositories", ["room_category_id"], name: "index_chef_att_repositories_on_room_category_id", using: :btree
+
+  create_table "chef_att_sources", force: :cascade do |t|
+    t.integer  "room_category_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "chef_att_sources", ["room_category_id"], name: "index_chef_att_sources_on_room_category_id", using: :btree
 
   create_table "hotels", force: :cascade do |t|
     t.string   "name"
@@ -31,5 +55,8 @@ ActiveRecord::Schema.define(version: 20160129115404) do
 
   add_index "room_categories", ["hotel_id"], name: "index_room_categories_on_hotel_id", using: :btree
 
+  add_foreign_key "chef_att_debs", "room_categories"
+  add_foreign_key "chef_att_repositories", "room_categories"
+  add_foreign_key "chef_att_sources", "room_categories"
   add_foreign_key "room_categories", "hotels"
 end
