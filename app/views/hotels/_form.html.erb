@@ -24,6 +24,9 @@
    <%= room_category.select :name, [["", ""], ["Install from repository", "Repository"], ["Install from deb file", "Deb"], ["Install from source", "Source"]] %>
    <%= room_category.check_box :_destroy %>
    <%= room_category.label :_destroy, 'remove' %>
+   <% if room_category.object.id != nil %>
+     <%= link_to 'Edit', edit_room_category_path(room_category.object.id) %>
+   <% end %>
   </div>
   </div>
   <% end %>
