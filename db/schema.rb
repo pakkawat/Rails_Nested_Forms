@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160130104945) do
+ActiveRecord::Schema.define(version: 20160131110004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160130104945) do
     t.integer  "room_category_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.text     "name"
   end
 
   add_index "chef_att_debs", ["room_category_id"], name: "index_chef_att_debs_on_room_category_id", using: :btree
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160130104945) do
     t.integer  "room_category_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.text     "name"
   end
 
   add_index "chef_att_repositories", ["room_category_id"], name: "index_chef_att_repositories_on_room_category_id", using: :btree
@@ -36,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160130104945) do
     t.integer  "room_category_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.text     "name"
   end
 
   add_index "chef_att_sources", ["room_category_id"], name: "index_chef_att_sources_on_room_category_id", using: :btree

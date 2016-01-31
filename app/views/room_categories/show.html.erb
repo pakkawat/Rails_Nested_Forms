@@ -9,10 +9,10 @@
 </p>
 <h2>Chef Resources</h2>
 
-<% if @room_category.room_categories.any? %>
+<% if @room_category.chef_att_repositories.any? %>
 <ul>
- <% @room_category.chef_repositories.each do |chef_repository| %>
-  <li><%= link_to chef_repository, chef_repository %></li>
+ <% @room_category.chef_att_repositories.each do |chef_att_repository| %>
+  <li><%= link_to chef_att_repository, chef_att_repository %></li>
  <% end %>
 </ul>
 <% end %>

@@ -20,14 +20,14 @@ class RoomCategoriesController < ApplicationController
   # GET /room_categories/1/edit
   def edit
     if @room_category.name == "Repository"
-      if !@room_category.chef_repositories.any?
-        @room_category.chef_repositories.build
+      if !@room_category.chef_att_repositories.any?
+        @room_category.chef_att_repositories.build
       end
     elsif @room_category.name == "Deb"
       if !@room_category.chef_att_debs.any?
         @room_category.chef_att_debs.build
       end
-    else #Source
+    elsif @room_category.name == "Source"
       if !@room_category.chef_att_sources.any?
         @room_category.chef_att_sources.build
       end
@@ -83,6 +83,6 @@ class RoomCategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_category_params
-      params.require(:room_category).permit(:name, :hotel_id, chef_att_debs_attributes: [ :id, :name, :_destroy ], chef_repositories_attributes: [ :id, :name, :_destroy ], chef_sources_attributes: [ :id, :name, :_destroy ])
+      params.require(:room_category).permit(:name, :hotel_id, chef_att_debs_attributes: [ :id, :name, :_destroy ], chef_att_repositories_attributes: [ :id, :name, :_destroy ], chef_att_sources_attributes: [ :id, :name, :_destroy ])
     end
 end

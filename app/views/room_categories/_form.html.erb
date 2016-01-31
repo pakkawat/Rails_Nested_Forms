@@ -24,11 +24,11 @@
   <div class="chef_resource_fields">
   <div class="field">
 
-  <%= f.fields_for :chef_repositories do |chef_repository| %>
-   <%= chef_repository.label :name %><br>
-   <%= chef_repository.text_field :name %>
-   <%= chef_repository.check_box :_destroy %>
-   <%= chef_repository.label :_destroy, 'remove' %>
+  <%= f.fields_for :chef_att_repositories do |chef_att_repository| %>
+   <%= chef_att_repository.label :name %><br>
+   <%= chef_att_repository.text_field :name %>
+   <%= chef_att_repository.check_box :_destroy %>
+   <%= chef_att_repository.label :_destroy, 'remove' %>
   <% end %>
 
   <%= f.fields_for :chef_att_debs do |chef_att_deb| %>
