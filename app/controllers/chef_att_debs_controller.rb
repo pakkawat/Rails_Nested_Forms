@@ -69,6 +69,6 @@ class ChefAttDebsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chef_att_deb_params
-      params.require(:chef_att_deb).permit(:room_category_id)
+      params.require(:chef_att_deb).permit(:name, :room_category_id)
     end
 end

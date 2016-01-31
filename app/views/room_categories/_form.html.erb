@@ -19,6 +19,36 @@
     <%= f.label :hotel_id %><br>
     <%= f.text_field :hotel_id, disabled: true %>
   </div>
+
+  <h2>Chef Resource</h2>
+  <div class="chef_resource_fields">
+  <div class="field">
+
+  <%= f.fields_for :chef_repositories do |chef_repository| %>
+   <%= chef_repository.label :name %><br>
+   <%= chef_repository.text_field :name %>
+   <%= chef_repository.check_box :_destroy %>
+   <%= chef_repository.label :_destroy, 'remove' %>
+  <% end %>
+
+  <%= f.fields_for :chef_att_debs do |chef_att_deb| %>
+   <%= chef_att_deb.label :name %><br>
+   <%= chef_att_deb.text_field :name %>
+   <%= chef_att_deb.check_box :_destroy %>
+   <%= chef_att_deb.label :_destroy, 'remove' %>
+  <% end %>
+
+  <%= f.fields_for :chef_att_sources do |chef_att_source| %>
+   <%= chef_att_source.label :name %><br>
+   <%= chef_att_source.text_area :name %>
+   <%= chef_att_source.check_box :_destroy %>
+   <%= chef_att_source.label :_destroy, 'remove' %>
+  <% end %>
+
+  </div>
+  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

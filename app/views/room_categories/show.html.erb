@@ -1,14 +1,37 @@
 <p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
+<strong>Hotel:</strong>
+ <%= @room_category.hotel %>
+</p>
+<p>
+<strong>Name:</strong>
   <%= @room_category.name %>
 </p>
+<h2>Chef Resources</h2>
 
-<p>
-  <strong>Hotel:</strong>
-  <%= @room_category.hotel %>
-</p>
+<% if @room_category.room_categories.any? %>
+<ul>
+ <% @room_category.chef_repositories.each do |chef_repository| %>
+  <li><%= link_to chef_repository, chef_repository %></li>
+ <% end %>
+</ul>
+<% end %>
+
+<% if @room_category.chef_att_debs.any? %>
+<ul>
+ <% @room_category.chef_att_debs.each do |chef_att_deb| %>
+  <li><%= link_to chef_att_deb, chef_att_deb %></li>
+ <% end %>
+</ul>
+<% end %>
+
+<% if @room_category.chef_att_sources.any? %>
+<ul>
+ <% @room_category.chef_att_sources.each do |chef_att_source| %>
+  <li><%= link_to chef_att_source, chef_att_source %></li>
+ <% end %>
+</ul>
+<% end %>
 
 <%= link_to 'Edit', edit_room_category_path(@room_category) %> |
-<%= link_to 'Back', room_categories_path %>
+<%= link_to 'Back', hotels_path %>

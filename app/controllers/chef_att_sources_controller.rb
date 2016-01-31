@@ -69,6 +69,6 @@ class ChefAttSourcesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chef_att_source_params
-      params.require(:chef_att_source).permit(:room_category_id)
+      params.require(:chef_att_source).permit(:name, :room_category_id)
     end
 end
