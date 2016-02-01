@@ -57,7 +57,7 @@ class RoomCategoriesController < ApplicationController
     respond_to do |format|
       if @room_category.update(room_category_params)
         format.html { redirect_to @room_category, notice: 'Room category was successfully updated.' }
-        format.json { render :show, status: :ok, location: @room_category }
+        format.json { render :show, status: :ok, location: edit_hotel_path(@room_category.hotel) }
       else
         format.html { render :edit }
         format.json { render json: @room_category.errors, status: :unprocessable_entity }

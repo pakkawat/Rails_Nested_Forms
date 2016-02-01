@@ -45,7 +45,7 @@ class HotelsController < ApplicationController
     respond_to do |format|
       if @hotel.update(hotel_params)
         format.html { redirect_to @hotel, notice: 'Hotel was successfully updated.' }
-        format.json { render :show, status: :ok, location: @hotel }
+        format.json { render :show, status: :ok, location: edit_hotel_path(@hotel) }
       else
         format.html { render :edit }
         format.json { render json: @hotel.errors, status: :unprocessable_entity }
