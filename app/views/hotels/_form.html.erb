@@ -26,6 +26,10 @@
    <%= room_category.check_box :_destroy %>
    <%= room_category.label :_destroy, 'remove' %>
    <% if room_category.object.id != nil %>
+     <div style="display: none;">
+       <%= expand_collapse_for(room_category.object.id) %>
+     </div>
+     <button type="button" class="btn room_category">Expand</button>
      <%= link_to 'Edit', edit_room_category_path(room_category.object.id) %>
    <% end %>
   </div>
@@ -38,4 +42,24 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<script type='text/javascript'>
+$(document).on("click", "button.btn.room_category", function(e) {
+
+    $header = $(this);
+    //getting the next element
+    $content = $header.prev();
+    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+    $content.slideToggle(500, function () {
+        //execute this after slideToggle is done
+        //change text of header based on visibility of content div
+        $header.text(function () {
+            //change text based on condition
+            return $content.is(":visible") ? "Collapse" : "Expand";
+        });
+    });
+
+});
+</script>
+
 <%= javascript_include_tag "sortable/sort.js"%>
