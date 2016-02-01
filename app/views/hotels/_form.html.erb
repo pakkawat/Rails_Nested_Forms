@@ -17,8 +17,9 @@
    <%= f.text_field :name %>
   </div>
   <h2>Room Categories</h2>
+  <div class="sortable">
   <%= f.fields_for :room_categories do |room_category| %>
-  <div class="room_category_fields">
+  <div class="room_category_fields" data-id="<%= room_category.object.id %>">
   <div class="field">
    <%= room_category.label :name %><br>
    <%= room_category.select :name, [["", ""], ["Install from repository", "Repository"], ["Install from deb file", "Deb"], ["Install from source", "Source"]] %>
@@ -30,9 +31,11 @@
   </div>
   </div>
   <% end %>
-
+</div>
+<%= hidden_field_tag :hotel_id, @hotel.id %>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+<%= javascript_include_tag "sortable/sort.js"%>

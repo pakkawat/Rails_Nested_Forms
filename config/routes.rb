@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :chef_att_debs
   resources :chef_att_repositories
   resources :room_categories
-  resources :hotels
+  resources :hotels do
+    put :sort, on: :collection
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

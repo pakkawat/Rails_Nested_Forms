@@ -63,6 +63,15 @@ class HotelsController < ApplicationController
     end
   end
 
+  def sort
+    hotel = Hotel.find(params[:hotel_id])
+    params[:order].each do |key,value|
+      hotel.room_categories.find_by(id: value[:id]).update_attribute(:priority,value[:position])
+    end
+    render :nothing => true
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_hotel
