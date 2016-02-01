@@ -56,7 +56,7 @@ class RoomCategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @room_category.update(room_category_params)
-        format.html { redirect_to @room_category, notice: 'Room category was successfully updated.' }
+        format.html { redirect_to edit_hotel_path(@room_category.hotel), notice: 'Room category was successfully updated.' }
         format.json { render :show, status: :ok, location: edit_hotel_path(@room_category.hotel) }
       else
         format.html { render :edit }
