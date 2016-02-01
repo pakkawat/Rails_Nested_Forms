@@ -8,6 +8,8 @@ class RoomCategory < ActiveRecord::Base
   has_many :chef_att_sources, dependent: :destroy
   accepts_nested_attributes_for :chef_att_sources, reject_if: proc { |attributes| attributes['name'].blank? }, allow_destroy: true
 
+  default_scope { order("priority ASC") }
+
   def to_s
     name
   end
